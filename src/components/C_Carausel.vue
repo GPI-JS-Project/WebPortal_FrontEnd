@@ -4,21 +4,29 @@
   <div>
     <v-carousel cycle :show-arrows="false" delimiter-icon="mdi-checkbox-blank-circle-outline" class="mb-15 rounded-lg"
       :height="imageSize">
-      <v-carousel-item v-for="(item, i) in items" :key="i" :src="require(`../assets/${item.source}`)"
-        gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.6)">
-        <v-row class="fill-height" align="center" justify="center">
-          <v-col class="ml-5">
-            <router-link :to="'/informasi/detail/' + item.slugTitle" class="text-decoration-none">
-              <v-chip class="ma-2" close :color="settings.color" dark>
-                {{ item.category }}
-              </v-chip>
-              <br>
-              <div class="text-h4 white--text float-left">
-                {{ item.title }}
-              </div>
-            </router-link>
-          </v-col>
-        </v-row>
+      <v-carousel-item eager v-for="(item, i) in items" :key="i">
+        <v-img :src="require(`../assets/${item.source}`)" :lazy-src="require(`../assets/${item.source}`)"
+          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.6)">
+          <v-row class="fill-height" align="center" justify="center">
+            <v-col class="ml-5">
+              <router-link :to="'/informasi/detail/' + item.slugTitle" class="text-decoration-none">
+                <v-chip class="ma-2" close :color="settings.color" dark>
+                  {{ item.category }}
+                </v-chip>
+                <br>
+                <div class="text-h4 white--text float-left">
+                  {{ item.title }}
+                </div>
+              </router-link>
+            </v-col>
+          </v-row>
+          <template v-slot:placeholder>
+            <v-row class="fill-height ma-0" align="center" justify="center">
+              <v-progress-circular indeterminate color="grey lighten-5">
+              </v-progress-circular>
+            </v-row>
+          </template>
+        </v-img>
       </v-carousel-item>
     </v-carousel>
   </div>

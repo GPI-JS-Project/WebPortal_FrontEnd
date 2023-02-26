@@ -25,9 +25,8 @@
                                 <v-container fluid grid-list-lg>
                                     <v-layout row>
 
-                                        <v-img :src="require(`../assets/${item.source}`)"
-                                            :height="settings.defaultImageSmallContentHeight"
-                                            :lazy-src="require(`../assets/${item.source}`)" class="rounded-lg">
+                                        <v-img :src="require(`../assets/poster/${item.source}`)" 
+                                            :lazy-src="require(`../assets/poster/${item.source}`)" class="rounded-lg">
                                             <h2 class="font-weight-medium grey--text">
 
                                                 <v-chip class="ma-2" dark :color="settings.color">
@@ -91,7 +90,7 @@ export default {
                 title: "Ibadah Natal 2022 di jemaat GPI JS Jakarta Timur",
                 date: "5 jan 2023",
                 datePublish: "25 Des 2022",
-                source: "natal.jpg"
+                source: 'quotes1.jpg',
             },
             {
                 id: "2366",
@@ -101,7 +100,7 @@ export default {
                 title: "Pelayanan Mendoakan jemaat yang sedang Sakit dengan iman  Yesus Menyembuhkan",
                 datePublish: "1 jan 2023",
                 date: "06 Jan 2023",
-                source: "pelayanandiakonia.jpg"
+                source: 'quotes3.jpg',
             },
             {
                 id: "2553",
@@ -111,7 +110,7 @@ export default {
                 title: "Program Pembelajaran Hamba Tuhan di mulai pada tahun 1978",
                 datePublish: "25 Jan 2022",
                 date: "07 Jan 2023",
-                source: "belajar.jpg"
+                source: 'quotes4.jpg',
 
             },
             {
@@ -122,7 +121,7 @@ export default {
                 title: "Cabang Cabang GPI Jalan Suci di seluruh nusantara",
                 datePublish: "25 November 2022",
                 date: "06 Jan 2023",
-                source: "indonesia.jpg"
+                source: 'quotes5.jpg',
 
             },
             {
@@ -133,7 +132,7 @@ export default {
                 title: "Pensyafaat melakukan kegiatan doa setiap tahun di tempat yang ditentukan",
                 datePublish: "18 Des 2022",
                 date: "13 Jan 2023",
-                source: "pps.jpg"
+                source: 'quotes6.jpg',
 
             },
             {
@@ -144,7 +143,7 @@ export default {
                 title: " Pelopor GPI JS Ps.Stube pada tahun 1978, melakukan kehendak Bapa di sorga",
                 datePublish: "25 Des 2022",
                 date: "31 Jan 2023",
-                source: "mision.jpg"
+                source: 'quotes7.jpg'
 
             }
         ]

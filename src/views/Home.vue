@@ -1,27 +1,54 @@
 <template>
-
-
   <div>
     <v-main>
       <v-container>
-        <Carausel />
-        <HomeProfile />
-        <HomeInformations />
-        <HomeAgenda />
+        <v-lazy :min-height="200" :options="{ 'threshold': 0.5 }" transition="fade-transition">
+          <Carausel />
+        </v-lazy>
+
+        <v-lazy :min-height="200" :options="{ 'threshold': 0.5 }" transition="fade-transition">
+          <HomeProfile />
+        </v-lazy>
+
+        <v-lazy :min-height="200" :options="{ 'threshold': 0.5 }" transition="fade-transition">
+          <HomeInformations />
+        </v-lazy>
+
+        <v-lazy :min-height="200" :options="{ 'threshold': 0.5 }" transition="fade-transition">
+          <HomeAgenda />
+        </v-lazy>
+
       </v-container>
     </v-main>
-    <Parallax />
+
+
+    <v-lazy :min-height="200" :options="{ 'threshold': 0.5 }" transition="fade-transition">
+      <Parallax />
+    </v-lazy>
     <v-main class="mt-15">
       <v-container>
-     <Poster />
-        <HomeDocuments />
-        <Galery />
-        <Videos />    
+
+
+        <!-- <v-lazy :min-height="200" :options="{ 'threshold': 0.5 }" transition="fade-transition">
+          <Poster />
+        </v-lazy> -->
+
+        <v-lazy :min-height="200" :options="{ 'threshold': 0.5 }" transition="fade-transition">
+          <HomeDocuments />
+        </v-lazy>
+
+        <v-lazy :min-height="200" :options="{ 'threshold': 0.5 }" transition="fade-transition">
+          <Galery />
+        </v-lazy>
+
+        <v-lazy :min-height="200" :options="{ 'threshold': 0.5 }" transition="fade-transition">
+
+          <Videos />
+        </v-lazy>
+
       </v-container>
     </v-main>
   </div>
-
-
 </template>
 
 <script>

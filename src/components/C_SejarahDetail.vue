@@ -5,7 +5,7 @@
             <!-- <Breadcrumbs /> -->
             <!-- <v-card> -->
             <v-img src="../assets/profillawang.jpg" class="white--text align-end rounded-lg"
-                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)" height="400px">
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)">
                 <v-card-title>
                     Sejarag Gereja Pekabaran Injil Jalan Suci
                 </v-card-title>
