@@ -48,6 +48,20 @@
 import { mapState } from "vuex";
 export default {
   name: "Video",
+  metaInfo() {
+    return {
+      title: this.rows.title,
+      htmlAttrs: {
+        lang: 'en-US',
+        amp: true
+      },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'description', content: this.rows.content },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      ]
+    }
+  },
   computed: {
     ...mapState(['settings'])
   },

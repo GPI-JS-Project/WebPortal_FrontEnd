@@ -2,8 +2,7 @@
 <template class="my-1">
   <!-- <v-carousel next-icon="mdi-chevron-right" prev-icon="mdi-chevron-left" cycle delimiter-icon="mdi-minus" -->
   <div>
-    <v-carousel cycle :show-arrows="false" delimiter-icon="mdi-checkbox-blank-circle-outline" class="mb-15 rounded-lg"
-      :height="imageSize">
+    <v-carousel cycle :show-arrows="false" delimiter-icon="mdi-checkbox-blank-circle-outline" class="mb-15 rounded-lg">
       <v-carousel-item eager v-for="(item, i) in items" :key="i">
         <v-img :src="require(`../assets/${item.source}`)" :lazy-src="require(`../assets/${item.source}`)"
           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.6)">

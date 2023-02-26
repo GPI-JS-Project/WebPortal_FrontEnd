@@ -15,8 +15,8 @@
         <v-icon color="white">mdi-chevron-up</v-icon>
       </v-btn>
 
-      <v-container> 
-          <Footers class="mt-15" /> 
+      <v-container>
+        <Footers class="mt-15" />
       </v-container>
     </div>
     <div v-else>
@@ -35,6 +35,18 @@ import Footers from '@/components/C_Footer.vue';
 import { mapState } from "vuex";
 
 export default {
+  metaInfo: {
+    title: 'Sinode GPI "Jalan Suci"',
+    htmlAttrs: {
+      lang: 'en-US',
+      amp: true
+    },
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'description', content: 'Situs Resmi Sinode Gereja Pekabaran Injil "Jalan Suci" / GPI "Jalan Suci" ' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+    ]
+  },
   computed: {
     ...mapState(['settings'])
   },

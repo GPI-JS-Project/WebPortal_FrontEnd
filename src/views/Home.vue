@@ -64,7 +64,7 @@ import Videos from '@/components/C_HomeVideos';
 import Galery from '@/components/C_Galery';
 import { mapState } from "vuex";
 export default {
-  name: 'Home',
+  name: 'Home', 
   components: {
     HomeProfile,
     Carausel,
