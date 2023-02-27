@@ -24,10 +24,10 @@
                                     <v-container fluid grid-list-lg>
                                         <v-layout row>
                                             <!-- <v-flex xs5> -->
-                                            <v-img :height="settings.defaultImageSmallContentHeight"
+                                            <v-img cover :height="settings.defaultImageContentHeight"
                                                 :src="require(`../assets/${image.source}`)" :alt="image.alt"
                                                 :lazy-src="require(`../assets/${image.source}`)"
-                                                class="grey darken-4 rounded-lg" width="300">
+                                                class="grey darken-4 rounded-lg">
                                                 <template v-slot:placeholder>
                                                     <v-row class="fill-height ma-0" align="center" justify="center">
                                                         <v-progress-circular indeterminate color="grey lighten-5">

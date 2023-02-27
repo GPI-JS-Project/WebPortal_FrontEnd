@@ -5,7 +5,7 @@ name: Workflow CI/CD GPI JS
 on:
   push: 
      branches: 
-        - master
+        - ${{ env.BRANCH_NAME }}
   
   # Allow you to run this workflow manualy from the actions tab
   workflow_dispatch:
@@ -38,8 +38,8 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
           server: dev.gpijalansuci.org
-          username: dev_ftp@dev.gpijalansuci.org
-          password: dev_ftp@dev_ftp
+          username: ${{ secrets.DEV_USER }}
+          password: ${{ secrets.DEV_PASS }}
           local-dir: dist/
           exclude: |
             **/.git*
@@ -68,9 +68,9 @@ jobs:
       - name: Sync files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
-          server: test.gpijalansuci.org
-          username: test_ftp@test.gpijalansuci.org	
-          password: test_ftp@test_ftp
+          server: test.gpijalansuci.org 
+          username: ${{ secrets.TEST_USER }}
+          password: ${{ secrets.TEST_PASS }}
           local-dir: dist/
           exclude: |
             **/.git*
@@ -100,8 +100,8 @@ jobs:
           uses: SamKirkland/FTP-Deploy-Action@4.3.2
           with:
             server: gpijalansuci.org
-            username: prod_ftp@gpijalansuci.org
-            password: prod_ftp@prod_ftp
+            username: ${{ secrets.PROD_USER }}
+            password: ${{ secrets.PROD_PASS }}
             local-dir: dist/
             exclude: |
               **/.git*
