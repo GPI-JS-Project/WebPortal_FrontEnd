@@ -25,7 +25,7 @@
                                         <v-container fluid grid-list-lg>
                                             <v-layout row>
                                                 <v-img :src="require(`../assets/${item.source}`)"
-                                                    :height="settings.defaultImageSmallContentHeight" class="rounded-lg">
+                                                    :height="settings.defaultImageContentHeight" class="rounded-lg">
                                                 </v-img>
                                                 <div class="mt-2">
                                                     <div class="subheading font-weight-medium">
