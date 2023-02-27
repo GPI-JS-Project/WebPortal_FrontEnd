@@ -23,33 +23,42 @@
                                 <v-card :elevation="hover ? 5 : 1" :class="{ 'on-hover': hover }">
                                     <v-container fluid grid-list-lg>
                                         <v-layout row>
-                                            <v-flex xs5>
-                                                <v-img :height="settings.defaultImageSmallContentHeight"
-                                                    :src="require(`../assets/${image.source}`)" :alt="image.alt"
-                                                    :lazy-src="require(`../assets/${image.source}`)"
-                                                    class="grey darken-4 rounded-lg" width="300">
-                                                    <template v-slot:placeholder>
-                                                        <v-row class="fill-height ma-0" align="center" justify="center">
-                                                            <v-progress-circular indeterminate color="grey lighten-5">
-                                                            </v-progress-circular>
-                                                        </v-row>
-                                                    </template>
-                                                </v-img>
-                                            </v-flex>
-                                            <v-flex xs7>
+                                            <!-- <v-flex xs5> -->
+                                            <v-img :height="settings.defaultImageSmallContentHeight"
+                                                :src="require(`../assets/${image.source}`)" :alt="image.alt"
+                                                :lazy-src="require(`../assets/${image.source}`)"
+                                                class="grey darken-4 rounded-lg" width="300">
+                                                <template v-slot:placeholder>
+                                                    <v-row class="fill-height ma-0" align="center" justify="center">
+                                                        <v-progress-circular indeterminate color="grey lighten-5">
+                                                        </v-progress-circular>
+                                                    </v-row>
+                                                </template>
+                                                <!-- <v-btn class="cyan darken-2">{{ image.total }} Foto</v-btn> -->
+                                                <h2 class="font-weight-medium grey--text">
+
+                                                    <v-chip class="ma-2" dark :color="settings.color">
+                                                        <v-icon>
+                                                            mdi-camera
+                                                        </v-icon> {{ image.total }} Foto
+                                                    </v-chip>
+                                                </h2>
+                                            </v-img>
+                                            <!-- </v-flex>
+                                            <v-flex xs7> -->
 
 
-                                                <div class="mt-3">
-                                                    <h3 class="font-weight-medium grey--text">{{ image.total }} Foto {{
-                                                        image.title
-                                                    }}</h3>
-                                                    <h5 class="float-left font-weight-regular my-2">
-                                                        <v-chip class="ma-2" small outlined :color="settings.color">
-                                                            {{ image.category }}
-                                                        </v-chip> {{ image.date }}
-                                                    </h5>
-                                                </div>
-                                            </v-flex>
+                                            <div class="mt-3">
+                                                <h3 class="font-weight-medium grey--text"> {{
+                                                    image.title
+                                                }}</h3>
+                                                <h5 class="float-left font-weight-regular my-2">
+                                                    <v-chip class="ma-2" small outlined :color="settings.color">
+                                                        {{ image.category }}
+                                                    </v-chip> {{ image.date }}
+                                                </h5>
+                                            </div>
+                                            <!-- </v-flex> -->
                                         </v-layout>
                                     </v-container>
                                 </v-card>
@@ -82,7 +91,7 @@ export default {
             isShowgalery: false,
             imagesList: [
                 { source: "foto1.jpg", category: "Mision", title: "Peginjilan", total: 15, date: "25 Sept 2022", slug: "Penginjilan" },
-                { source: "foto2.jpg", category: "Ibadah", title: "Ibadah Raya", total: 23, date: "15 Sept 2022", slug: "Ibadah Raya" },
+                { source: "foto2.jpg", category: "Ibadah", title: "Ibadah Raya, Minggu 26 Feb 2023", total: 23, date: "15 Sept 2022", slug: "Ibadah Raya" },
                 { source: "foto3.jpg", category: "Pelayanan", title: "Pelayanan Diakonia", total: 50, date: "6 Agus 2022", slug: "Diakonia Melayani" },
                 { source: "foto4.jpg", category: "Program Sekolah Hamba Tuhan", title: "Hamba Tuhan", total: 14, date: "25 Des 2022", slug: "Hamba Hamba Tuhan" },
                 { source: "foto5.jpg", category: "Ibadah", title: "Sekolah Minggu", total: 20, date: "2 Sept 2022", slug: "Sunday School" },
