@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build"
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve --mode development",
+    "prod": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve --mode production",
+    "test": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve --mode test"
   },
   "dependencies": {
     "@cloudgeek/vue3-video-player": "^0.3.10",
