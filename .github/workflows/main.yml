@@ -5,7 +5,7 @@ name: Workflow CI/CD GPI JS
 on:
   push: 
      branches: 
-        - ${{ env.BRANCH_NAME }}
+        - master
   
   # Allow you to run this workflow manualy from the actions tab
   workflow_dispatch:
