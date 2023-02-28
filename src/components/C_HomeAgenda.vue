@@ -10,8 +10,7 @@
                 </h3>
             </v-col>
             <v-col md="6">
-                <v-btn v-show="isShowAgenda" small text :color="settings.color" class="white-text float-right"
-                    to="/agenda">
+                <v-btn v-show="isShowAgenda" small text :color="settings.color" class="white-text float-right" to="/agenda">
                     Semua <v-icon> mdi-chevron-right</v-icon>
                 </v-btn>
             </v-col>
@@ -25,7 +24,7 @@
                                 <v-container fluid grid-list-lg>
                                     <v-layout row>
 
-                                        <v-img :src="require(`../assets/poster/${item.source}`)" 
+                                        <v-img :src="require(`../assets/poster/${item.source}`)"
                                             :lazy-src="require(`../assets/poster/${item.source}`)" class="rounded-lg">
                                             <h2 class="font-weight-medium grey--text">
 
@@ -37,7 +36,7 @@
                                             </h2>
                                             <template v-slot:placeholder>
                                                 <v-row class="fill-height ma-0" align="center" justify="center">
-                                                    <v-progress-circular indeterminate color="grey lighten-5">
+                                                    <v-progress-circular indeterminate dark>
                                                     </v-progress-circular>
                                                 </v-row>
                                             </template>

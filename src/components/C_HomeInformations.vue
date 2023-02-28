@@ -24,8 +24,20 @@
                                     <v-card :elevation="hover ? 5 : 1" :class="{ 'on-hover': hover }">
                                         <v-container fluid grid-list-lg>
                                             <v-layout row>
-                                                <v-img :src="require(`../assets/${item.source}`)"
+                                                <!-- <v-img :src="require(`../assets/${item.source}`)"
                                                     :height="settings.defaultImageContentHeight" class="rounded-lg">
+                                                </v-img> -->
+                                                <v-img :height="settings.defaultImageContentHeight"
+                                                    :src="require(`../assets/${item.source}`)" :alt="item.title"
+                                                    :lazy-src="require(`../assets/${item.source}`)"
+                                                    class="grey darken-4 rounded-lg"
+                                                    :width="settings.defaultImageSmallContentWidth">
+                                                    <template v-slot:placeholder>
+                                                        <v-row class="fill-height ma-0" align="center" justify="center">
+                                                            <v-progress-circular indeterminate dark>
+                                                            </v-progress-circular>
+                                                        </v-row>
+                                                    </template>
                                                 </v-img>
                                                 <div class="mt-2">
                                                     <div class="subheading font-weight-medium">

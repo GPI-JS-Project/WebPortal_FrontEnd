@@ -25,12 +25,12 @@
                                 <v-container fluid grid-list-lg>
                                     <v-layout row>
                                         <v-img :height="settings.defaultImageSmallContentHeight"
-                                        :src="require(`../assets/${image.img}`)" :alt="image.title"
+                                            :src="require(`../assets/${image.img}`)" :alt="image.title"
                                             :lazy-src="require(`../assets/${image.img}`)" class="grey darken-4 rounded-lg"
                                             :width="settings.defaultImageSmallContentWidth">
                                             <template v-slot:placeholder>
                                                 <v-row class="fill-height ma-0" align="center" justify="center">
-                                                    <v-progress-circular indeterminate color="grey lighten-5">
+                                                    <v-progress-circular indeterminate dark>
                                                     </v-progress-circular>
                                                 </v-row>
                                             </template>
@@ -63,7 +63,6 @@
         </v-row>
 
     </v-container>
-
 </template>
 
 <script>
@@ -73,12 +72,12 @@ export default {
         isShowDocument: false,
         listDocuments: [
             {
-                img:'hasilpersidanganilahi.jpg',
+                img: 'hasilpersidanganilahi.jpg',
                 title: 'Hasil persidangan ilahi ',
                 subtitle: `<span class="text--primary">Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
             },
             {
-                img: 'dokumentkeanggotaan.jpg', 
+                img: 'dokumentkeanggotaan.jpg',
                 title: 'Document keanggotaan PGPI',
                 subtitle: `<span class="text--primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend.`,
             },
