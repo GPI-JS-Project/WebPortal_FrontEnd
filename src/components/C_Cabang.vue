@@ -18,14 +18,14 @@
                             <v-card :elevation="hover ? 5 : 1" :class="{ 'on-hover': hover }">
                                 <v-container fluid grid-list-lg>
                                     <v-layout row>
-                                        <v-img :height="settings.defaultImageSmallContentHeight"
+                                        <v-img :height="settings.defaultImageContentHeight"
                                             :src="require(`../assets/${items.source}`)" :alt="items.title"
                                             :lazy-src="require(`../assets/${items.source}`)"
                                             class="grey darken-4 rounded-lg"
                                             :width="settings.defaultitemsSmallContentWidth">
                                             <template v-slot:placeholder>
                                                 <v-row class="fill-height ma-0" align="center" justify="center">
-                                                    <v-progress-circular indeterminate color="grey lighten-5">
+                                                    <v-progress-circular indeterminate :color="settings.color">
                                                     </v-progress-circular>
                                                 </v-row>
                                             </template>
@@ -81,7 +81,7 @@
             <span class="text-h7 mx-2">Kategori</span>
         </v-btn>
         <span class="text-h7 mx-2 text-right grey--text text-uppercase">{{ selectedCategory.title }}</span>
-        <SearchingModal @searchData="getCabangGerejaBySlug" />
+        <SearchingModal @searchData="getCabangGerejaBySlug" class="my-5" />
         <v-col cols="12">
             <v-row>
                 <v-col md="4" v-show="isShowNews" v-for="items in infoData">
@@ -91,14 +91,14 @@
                                 <v-card :elevation="hover ? 5 : 1" :class="{ 'on-hover': hover }">
                                     <v-container fluid grid-list-lg>
                                         <v-layout row>
-                                            <v-img :height="settings.defaultImageSmallContentHeight"
+                                            <v-img :height="settings.defaultImageContentHeight"
                                                 :src="require(`../assets/${items.source}`)" :alt="items.title"
                                                 :lazy-src="require(`../assets/${items.source}`)"
                                                 class="grey darken-4 rounded-lg"
                                                 :width="settings.defaultitemsSmallContentWidth">
                                                 <template v-slot:placeholder>
                                                     <v-row class="fill-height ma-0" align="center" justify="center">
-                                                        <v-progress-circular indeterminate color="grey lighten-5">
+                                                        <v-progress-circular indeterminate :color="settings.color">
                                                         </v-progress-circular>
                                                     </v-row>
                                                 </template>
@@ -125,8 +125,8 @@
             </v-row>
         </v-col>
         <v-col md="12" v-show="isShowNews == false">
-            <v-alert color="blue-grey" icon="mdi-information-outline" dense>
-                Sementara belum ada informasi
+            <v-alert color="blue-grey" outlined icon="mdi-information-outline" dense>
+                Sementara belum ada data
             </v-alert>
         </v-col>
 
@@ -318,6 +318,7 @@ export default defineComponent({
                 this.isShowNews = true;
             }
             this.datafiltering = filteredList;
+            this.drawer = false;
         },
     }
 });

@@ -14,7 +14,7 @@
     <div v-else>
         <v-list nav dense>
             <v-list-item-group :active-class="settings.color" class="white--text text-uppercase">
-                <v-list-item v-for="(val, key) in items" :key="key" v-on:click="$emit('getCategoryBySlug', val)">
+                <v-list-item v-for="(val, key) in items" :key="key" v-on:click="$emit('getCabangGerejaBySlug', val)">
                     <v-list-item-title>{{ val.text }}</v-list-item-title>
                 </v-list-item>
             </v-list-item-group>
@@ -29,7 +29,7 @@ export default {
     data: () => ({
         selectedItem: 0,
         model: null,
-        isMobile: false, 
+        isMobile: false,
         items: [
             { text: 'Semua', icon: 'mdi-clock', total: 5, slug: "semua-kategori" },
             { text: 'Papua', icon: 'mdi-clock', total: 5, slug: "papua" },
@@ -81,7 +81,7 @@ export default {
 
         // var listData = this.items.filter((item) => {
         //     return item.slug;
-        // });
+        // }); 
         let indexData = 0;
         this.items.forEach((el, index) => {
             if (el.slug === this.$route.params.id) indexData = index;

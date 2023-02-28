@@ -30,11 +30,10 @@
                                                 class="grey darken-4 rounded-lg">
                                                 <template v-slot:placeholder>
                                                     <v-row class="fill-height ma-0" align="center" justify="center">
-                                                        <v-progress-circular indeterminate color="grey lighten-5">
+                                                        <v-progress-circular indeterminate :color="settings.color">
                                                         </v-progress-circular>
                                                     </v-row>
                                                 </template>
-                                                <!-- <v-btn class="cyan darken-2">{{ image.total }} Foto</v-btn> -->
                                                 <h2 class="font-weight-medium grey--text">
 
                                                     <v-chip class="ma-2" dark :color="settings.color">

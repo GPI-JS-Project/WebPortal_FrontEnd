@@ -25,7 +25,7 @@
                                                 class="grey darken-4 rounded-lg">
                                                 <template v-slot:placeholder>
                                                     <v-row class="fill-height ma-0" align="center" justify="center">
-                                                        <v-progress-circular indeterminate color="grey lighten-5">
+                                                        <v-progress-circular indeterminate :color="settings.color">
                                                         </v-progress-circular>
                                                     </v-row>
                                                 </template>
@@ -87,7 +87,7 @@
             <span class="text-h7 mx-2">Kategori</span>
         </v-btn>
         <span class="text-h7 mx-2 text-right grey--text text-uppercase">{{ selectedCategory.title }}</span>
-        <SearchingModal @searchData="getCategoryBySlug" />
+        <SearchingModal @searchData="getCategoryBySlug" class="my-5" />
 
         <v-col md="12" v-show="isShowAgenda" v-for="item in agendaData">
             <v-flex xs12>
@@ -96,13 +96,13 @@
                         <v-card :elevation="hover ? 18 : 1" :class="{ 'on-hover': hover }">
                             <v-container fluid grid-list-lg>
                                 <v-layout row>
-                                    <v-img :src="require(`../assets/${item.source}`)"
-                                        :width="settings.defaultImageSmallContentWidth"
-                                        :height="settings.defaultImageSmallContentHeight"
-                                        :lazy-src="require(`../assets/${item.source}`)" class="grey darken-4 rounded-lg">
+                                    <v-img :src="require(`../assets/poster/${item.source}`)"
+                                        :height="settings.defaultImageContentHeight"
+                                        :lazy-src="require(`../assets/poster/${item.source}`)"
+                                        class="grey darken-4 rounded-lg">
                                         <template v-slot:placeholder>
                                             <v-row class="fill-height ma-0" align="center" justify="center">
-                                                <v-progress-circular indeterminate color="grey lighten-5">
+                                                <v-progress-circular indeterminate :color="settings.color">
                                                 </v-progress-circular>
                                             </v-row>
                                         </template>
@@ -132,8 +132,8 @@
             </v-flex>
         </v-col>
         <v-col md="12" v-show="isShowAgenda == false">
-            <v-alert color="blue-grey" icon="mdi-information-outline" dense>
-                Sementara belum ada agenda
+            <v-alert color="blue-grey" outlined icon="mdi-information-outline" dense>
+                Sementara belum ada data
             </v-alert>
         </v-col>
     </div>
@@ -296,6 +296,7 @@ export default {
                 this.isShowAgenda = true;
             }
             this.datafiltering = filteredList;
+            this.drawer = false;
         },
     },
     created() {

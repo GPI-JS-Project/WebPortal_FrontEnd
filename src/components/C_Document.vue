@@ -23,7 +23,7 @@
                       :width="settings.defaultImageSmallContentWidth">
                       <template v-slot:placeholder>
                         <v-row class="fill-height ma-0" align="center" justify="center">
-                          <v-progress-circular indeterminate color="grey lighten-5">
+                          <v-progress-circular indeterminate :color="settings.color">
                           </v-progress-circular>
                         </v-row>
                       </template>
@@ -79,7 +79,7 @@
       <span class="text-h7 mx-2">Kategori</span>
     </v-btn>
     <span class="text-h7 mx-2 text-right grey--text text-uppercase">{{ selectedCategory.title }}</span>
-    <SearchingModal @searchData="getCategoryBySlug" />
+    <SearchingModal @searchData="getCategoryBySlug" class="my-5" />
     <v-row>
 
       <v-col md="12" v-for="items in documentsData">
@@ -96,7 +96,7 @@
                         class="grey darken-4 rounded-lg" :width="settings.defaultImageSmallContentWidth">
                         <template v-slot:placeholder>
                           <v-row class="fill-height ma-0" align="center" justify="center">
-                            <v-progress-circular indeterminate color="grey lighten-5">
+                            <v-progress-circular indeterminate :color="settings.color">
                             </v-progress-circular>
                           </v-row>
                         </template>
@@ -122,9 +122,9 @@
         </v-flex>
       </v-col>
       <v-col md="12" v-show="isShowDocument == false">
-        <v-alert :color="settings.color + ' lighten-5'" icon="mdi-information-outline" dense>
-          Sementara belum ada informasi
-        </v-alert>
+        <v-alert color="blue-grey" outlined icon="mdi-information-outline" dense>
+                Sementara belum ada data
+            </v-alert>
       </v-col>
 
     </v-row>
@@ -322,6 +322,7 @@ export default {
         this.isShowDocument = true;
       }
       this.datafiltering = filteredList;
+      this.drawer = false;
     },
     created() {
       this.setBreadcrumsData();

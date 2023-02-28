@@ -1,6 +1,6 @@
 <template>
-    <v-container>
-        <v-row>
+    <div>
+        <v-row class="my-5">
             <v-col md="6">
                 <h3 class="font-weight-regular">
                     <v-icon>
@@ -30,7 +30,7 @@
                                             :width="settings.defaultImageSmallContentWidth">
                                             <template v-slot:placeholder>
                                                 <v-row class="fill-height ma-0" align="center" justify="center">
-                                                    <v-progress-circular indeterminate dark>
+                                                    <v-progress-circular indeterminate :color="settings.color">
                                                     </v-progress-circular>
                                                 </v-row>
                                             </template>
@@ -61,8 +61,7 @@
             </v-col>
 
         </v-row>
-
-    </v-container>
+    </div>
 </template>
 
 <script>
