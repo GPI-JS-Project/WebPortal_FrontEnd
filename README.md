@@ -30,5 +30,11 @@ https://www.npmjs.com/package/vue-pwa-asset-generator
 ### Routing .htaccess 
 https://stackoverflow.com/questions/36399319/vue-router-return-404-when-revisit-to-the-url
 
-### Github GPI Jalan suci Dev
-https://github.com/novalsmith/gpinewsportal
+### GPI Jalan suci Dev
+https://dev.gpijalansuci.org
+
+### GPI Jalan suci Test
+https://test.gpijalansuci.org
+
+### GPI Jalan suci Production
+https://gpijalansuci.org
