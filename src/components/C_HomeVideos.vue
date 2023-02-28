@@ -1,6 +1,6 @@
 <template >
-    <v-container>
-        <v-row>
+    <div>
+        <v-row class="my-5">
             <v-col md="6">
                 <h3 class="font-weight-regular">
                     <v-icon>
@@ -71,7 +71,7 @@
                 Sementara belum ada video
             </v-alert>
         </v-col>
-    </v-container>
+    </div>
 </template>
 
 <script>

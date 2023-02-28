@@ -36,7 +36,7 @@
                                             </h2>
                                             <template v-slot:placeholder>
                                                 <v-row class="fill-height ma-0" align="center" justify="center">
-                                                    <v-progress-circular indeterminate dark>
+                                                    <v-progress-circular indeterminate :color="settings.color">
                                                     </v-progress-circular>
                                                 </v-row>
                                             </template>

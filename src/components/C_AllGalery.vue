@@ -26,7 +26,7 @@
                                             :width="settings.defaultImageSmallContentWidth">
                                             <template v-slot:placeholder>
                                                 <v-row class="fill-height ma-0" align="center" justify="center">
-                                                    <v-progress-circular indeterminate color="grey lighten-5">
+                                                    <v-progress-circular indeterminate :color="settings.color">
                                                     </v-progress-circular>
                                                 </v-row>
                                             </template>
@@ -56,13 +56,77 @@
 
         </v-row>
 
-
         <GeneralDialog v-if="this.$store.state.settings['dialogData']['modalType'].isGalery">
             <component :is="child_component"></component>
         </GeneralDialog>
-
     </div>
 
+    <div v-else>
+        <GeneralDialog v-if="this.$store.state.settings['dialogData']['modalType'].isGalery">
+            <component :is="child_component"></component>
+        </GeneralDialog>
+        <v-navigation-drawer v-model="drawer" fixed left class="rounded-r-lg">
+            <v-row class="my-1 mx-1">
+                <v-col md="10">
+                    <span>Kategori</span>
+                </v-col>
+                <v-col md="2" class="text-right">
+                    <v-btn icon @click.stop="drawer = false" :color="settings.color">
+                        <v-icon>
+                            mdi-close
+                        </v-icon>
+                    </v-btn>
+                </v-col>
+            </v-row>
+            <v-divider></v-divider>
+            <C_CategorySection @getCategoryBySlug="getCategoryBySlug" />
+        </v-navigation-drawer>
+
+        <v-btn text @click.stop="drawer = !drawer">
+            <v-icon>mdi-menu</v-icon>
+            <span class="text-h7 mx-2">Kategori</span>
+        </v-btn>
+        <span class="text-h7 mx-2 text-right grey--text text-uppercase">{{ selectedCategory.title }}</span>
+        <SearchingModal @searchData="getCategoryBySlug" class="my-5" />
+        <v-row>
+            <v-col v-show="isShowgalery" v-for="image in galeryData">
+                <v-flex xs12>
+                    <v-hover v-slot="{ hover }" open-delay="200">
+                        <a href="javascript:void(0)" @click="openImage(image)">
+                            <v-card :elevation="hover ? 5 : 1" :class="{ 'on-hover': hover }">
+                                <v-container fluid grid-list-lg>
+                                    <v-layout row>
+                                        <v-img :height="settings.defaultImageSmallContentHeight"
+                                            :src="require(`../assets/${image.source}`)" :alt="image.alt"
+                                            :lazy-src="require(`../assets/${image.source}`)"
+                                            class="grey darken-4 rounded-lg"
+                                            :width="settings.defaultImageSmallContentWidth">
+                                            <template v-slot:placeholder>
+                                                <v-row class="fill-height ma-0" align="center" justify="center">
+                                                    <v-progress-circular indeterminate :color="settings.color">
+                                                    </v-progress-circular>
+                                                </v-row>
+                                            </template>
+                                        </v-img>
+                                        <div>
+                                            <div class="subheading font-weight-medium mt-3 ml-3">
+                                                {{ image.title }}
+                                            </div>
+                                            <h5 class="float-left font-weight-regular my-2">
+                                                <v-chip class="ma-2" small outlined :color="settings.color">
+                                                    {{ image.category }}
+                                                </v-chip> {{ image.date }}
+                                            </h5>
+                                        </div>
+                                    </v-layout>
+                                </v-container>
+                            </v-card>
+                        </a>
+                    </v-hover>
+                </v-flex>
+            </v-col>
+        </v-row>
+    </div>
 </template>
 
 <script>
@@ -71,12 +135,13 @@ import Breadcrumbs from '@/components/C_Breadcrumbs.vue';
 import C_CategorySection from '@/components/C_CategorySection.vue';
 import GeneralDialog from "@/components/C_GeneralDialog.vue";
 import GaleryModal from "@/components/C_GaleryModal.vue";
-
+import SearchingModal from '@/components/C_SearchingModal.vue';
 
 export default {
     data: () => ({
         dialogm1: '',
         dialog: false,
+        drawer: false,
         isShowgalery: false,
         selectedItem: 0,
         localData: null,
@@ -124,7 +189,7 @@ export default {
             {
                 source: "cabang.jpg", category: "Cabang Gereja", title: "GPI Jalan suci Cabang atau daerah ",
                 slugCategory: "cabang-gereja", total: 15, date: "8 Sept 2022", slugTitle: "cabang-gereja"
-            }, 
+            },
             {
                 source: "rakornas.jpg", category: "Rakornas",
                 slugCategory: "rakornas",
@@ -142,37 +207,45 @@ export default {
             {
                 source: "pps.jpg", category: "PPS", title: "Pensyafaat melakukan doa",
                 slugCategory: "pps", total: 15, date: "8 Sept 2022", slugTitle: "pps"
-            }, 
+            },
             {
                 source: "youthcamp.jpg", category: "Youth Camp", title: "Pemuda Melakukan Kegiatan Youth Camp",
                 slugCategory: "youth-camp", total: 15, date: "8 Sept 2022", slugTitle: "yaouth-camp"
-            }, 
+            },
             {
                 source: "pertemuanpengurus.jpg", category: "Persidangan Ilahi", title: "Persidangan Ilahi di lakukan setiap tahun",
                 slugCategory: "persidangan-ilahi", total: 15, date: "8 Sept 2022", slugTitle: "persidangan-ilahi"
-            }, 
+            },
             {
                 source: "kaumwanita.jpg", category: "Kaum Wanita", title: "Pertemuan Kaum Wanita di lawang 2020",
                 slugCategory: "kaum-wanita", total: 15, date: "8 Sept 2014", slugTitle: "kaum-wanita"
-            }, 
+            },
             {
                 source: "bica.jpg", category: "Bica", title: "Bica, lawang 2018",
                 slugCategory: "bica", total: 15, date: "8 Sept 2018", slugTitle: "bica-lawang-2018"
-            }, 
+            },
             {
                 source: "kaumwanita.jpg", category: "Kaum Wanita", title: "Pertemuan Kaum Wanita di lawang 2010",
                 slugCategory: "kaum-wanita", total: 15, date: "8 Sept 2010", slugTitle: "kaum-wanita"
             }
 
 
-        ]
+        ],
+        datafiltering: [],
+        isCategoryClicked: false,
+        drawer: false,
+        isShowVideo: false,
+        selectedCategory: {
+            title: "",
+            slug: ""
+        }
     }),
     components: {
         Breadcrumbs,
         C_CategorySection,
         GaleryModal,
         GeneralDialog,
-
+        SearchingModal
     },
     computed: {
         ...mapState(['settings']),
@@ -233,7 +306,7 @@ export default {
                 if (event === this.$store.state.settings.allCategory) {
                     filteredList = this.imagesList;
                 } else {
-                    filteredList = this.imagesList.filter((e) => e.slugCategory === event).map((e) => { return e });
+                    filteredList = this.imagesList.filter((e) => e.slugCategory === event.slug).map((e) => { return e });
                 }
                 this.isCategoryClicked = true;
                 if (filteredList.length == 0) {
