@@ -26,7 +26,8 @@
                                     <v-layout row>
                                         <v-img :height="settings.defaultImageSmallContentHeight"
                                             :src="require(`../assets/${image.img}`)" :alt="image.title"
-                                            :lazy-src="require(`../assets/${image.img}`)" class="grey darken-4 rounded-lg"
+                                            :lazy-src="require(`../assets/default/DefaultImage.jpg`)"
+                                            class="grey darken-4 rounded-lg"
                                             :width="settings.defaultImageSmallContentWidth">
                                             <template v-slot:placeholder>
                                                 <v-row class="fill-height ma-0" align="center" justify="center">

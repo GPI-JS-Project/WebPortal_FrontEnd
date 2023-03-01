@@ -4,7 +4,7 @@
   <div>
     <v-carousel cycle :show-arrows="false" delimiter-icon="mdi-checkbox-blank-circle-outline" class="mb-15 rounded-lg">
       <v-carousel-item :height="settings.defaultImageContentHeight" v-for="(item, i) in items" :key="i"
-        :src="require(`../assets/${item.source}`)" :lazy-src="require(`../assets/${item.source}`)"
+        :src="require(`../assets/${item.source}`)" :lazy-src="require(`../assets/default/DefaultImage.jpg`)"
         gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.6)">
         <v-row class="fill-height" align="center" justify="center">
           <v-col class="ml-5">

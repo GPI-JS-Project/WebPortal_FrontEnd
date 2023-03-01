@@ -20,7 +20,7 @@
                                     <v-layout row>
                                         <v-img :height="settings.defaultImageContentHeight"
                                             :src="require(`../assets/${items.source}`)" :alt="items.title"
-                                            :lazy-src="require(`../assets/${items.source}`)"
+                                            :lazy-src="require(`../assets/default/DefaultImage.jpg`)"
                                             class="grey darken-4 rounded-lg"
                                             :width="settings.defaultitemsSmallContentWidth">
                                             <template v-slot:placeholder>
@@ -93,7 +93,7 @@
                                         <v-layout row>
                                             <v-img :height="settings.defaultImageContentHeight"
                                                 :src="require(`../assets/${items.source}`)" :alt="items.title"
-                                                :lazy-src="require(`../assets/${items.source}`)"
+                                                :lazy-src="require(`../assets/default/DefaultImage.jpg`)"
                                                 class="grey darken-4 rounded-lg"
                                                 :width="settings.defaultitemsSmallContentWidth">
                                                 <template v-slot:placeholder>
