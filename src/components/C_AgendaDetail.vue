@@ -3,7 +3,7 @@
     <v-row>
       <v-col md="10" offset-md="1">
         <v-img :src="require(`../assets/poster/${rows.source}`)" :alt="rows.title"
-          :lazy-src="require(`../assets/poster/${rows.source}`)" class="white--text align-end rounded-lg"
+          :lazy-src="require(`../assets/default/DefaultImage.jpg`)" class="white--text align-end rounded-lg"
           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)">
           <v-card-title>
             <v-container>

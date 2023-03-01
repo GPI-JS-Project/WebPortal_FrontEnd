@@ -19,8 +19,8 @@
                 <v-container fluid grid-list-lg>
                   <v-layout row>
                     <v-img :height="settings.defaultImageSmallContentHeight" :src="require(`../assets/${items.source}`)"
-                      :alt="items.title" :lazy-src="require(`../assets/${items.source}`)" class="grey darken-4 rounded-lg"
-                      :width="settings.defaultImageSmallContentWidth">
+                      :alt="items.title" :lazy-src="require(`../assets/default/DefaultImage.jpg`)"
+                      class="grey darken-4 rounded-lg" :width="settings.defaultImageSmallContentWidth">
                       <template v-slot:placeholder>
                         <v-row class="fill-height ma-0" align="center" justify="center">
                           <v-progress-circular indeterminate :color="settings.color">
@@ -92,7 +92,7 @@
                   <v-container fluid grid-list-lg>
                     <v-layout row>
                       <v-img :height="settings.defaultImageSmallContentHeight" :src="require(`../assets/${items.source}`)"
-                        :alt="items.title" :lazy-src="require(`../assets/${items.source}`)"
+                        :alt="items.title" :lazy-src="require(`../assets/default/DefaultImage.jpg`)"
                         class="grey darken-4 rounded-lg" :width="settings.defaultImageSmallContentWidth">
                         <template v-slot:placeholder>
                           <v-row class="fill-height ma-0" align="center" justify="center">
@@ -123,8 +123,8 @@
       </v-col>
       <v-col md="12" v-show="isShowDocument == false">
         <v-alert color="blue-grey" outlined icon="mdi-information-outline" dense>
-                Sementara belum ada data
-            </v-alert>
+          Sementara belum ada data
+        </v-alert>
       </v-col>
 
     </v-row>

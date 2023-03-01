@@ -8,9 +8,9 @@
                     <v-row class="fill-height" align="center" justify="center" @click="toggle">
                         <v-scale-transition>
                         <!-- <v-img :src="item.src" height="250" width="280" class="rounded-lg">
-                                                            </v-img> -->
+                                                                </v-img> -->
                             <v-img :src="require(`../assets/poster/${items.source}`)" :alt="items.title"
-                                :lazy-src="require(`../assets/poster/${items.source}`)" class="grey darken-4 rounded-lg"
+                                :lazy-src="require(`../assets/default/DefaultImage.jpg`)" class="grey darken-4 rounded-lg"
                                 :width="350" aspect-ratio="1/1">
                                 <template v-slot:placeholder>
                                     <v-row class="fill-height ma-0" align="center" justify="center">

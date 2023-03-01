@@ -26,7 +26,7 @@
                                             <!-- <v-flex xs5> -->
                                             <v-img cover :height="settings.defaultImageContentHeight"
                                                 :src="require(`../assets/${image.source}`)" :alt="image.alt"
-                                                :lazy-src="require(`../assets/${image.source}`)"
+                                                :lazy-src="require(`../assets/default/DefaultImage.jpg`)"
                                                 class="grey darken-4 rounded-lg">
                                                 <template v-slot:placeholder>
                                                     <v-row class="fill-height ma-0" align="center" justify="center">

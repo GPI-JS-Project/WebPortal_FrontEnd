@@ -24,8 +24,8 @@
                                 <v-container fluid grid-list-lg>
                                     <v-layout row>
 
-                                        <v-img :src="require(`../assets/poster/${item.source}`)"
-                                            :lazy-src="require(`../assets/poster/${item.source}`)" class="rounded-lg">
+                                        <v-img :src="require(`../assets/poster/${item.source}`)" min-height="300"
+                                            :lazy-src="require(`../assets/default/DefaultImage.jpg`)" class="rounded-lg">
                                             <h2 class="font-weight-medium grey--text">
 
                                                 <v-chip class="ma-2" dark :color="settings.color">

@@ -21,7 +21,7 @@
                                     <v-container fluid grid-list-lg>
                                         <v-layout row>
                                             <v-img :src="require(`../assets/poster/${item.source}`)"
-                                                :lazy-src="require(`../assets/poster/${item.source}`)"
+                                            :lazy-src="require(`../assets/default/DefaultImage.jpg`)"
                                                 class="grey darken-4 rounded-lg">
                                                 <template v-slot:placeholder>
                                                     <v-row class="fill-height ma-0" align="center" justify="center">
@@ -98,7 +98,7 @@
                                 <v-layout row>
                                     <v-img :src="require(`../assets/poster/${item.source}`)"
                                         :height="settings.defaultImageContentHeight"
-                                        :lazy-src="require(`../assets/poster/${item.source}`)"
+                                        :lazy-src="require(`../assets/default/DefaultImage.jpg`)"
                                         class="grey darken-4 rounded-lg">
                                         <template v-slot:placeholder>
                                             <v-row class="fill-height ma-0" align="center" justify="center">

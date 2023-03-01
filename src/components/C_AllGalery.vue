@@ -21,7 +21,7 @@
                                     <v-layout row>
                                         <v-img :height="settings.defaultImageSmallContentHeight"
                                             :src="require(`../assets/${image.source}`)" :alt="image.alt"
-                                            :lazy-src="require(`../assets/${image.source}`)"
+                                            :lazy-src="require(`../assets/default/DefaultImage.jpg`)"
                                             class="grey darken-4 rounded-lg"
                                             :width="settings.defaultImageSmallContentWidth">
                                             <template v-slot:placeholder>
@@ -98,7 +98,7 @@
                                     <v-layout row>
                                         <v-img :height="settings.defaultImageSmallContentHeight"
                                             :src="require(`../assets/${image.source}`)" :alt="image.alt"
-                                            :lazy-src="require(`../assets/${image.source}`)"
+                                            :lazy-src="require(`../assets/default/DefaultImage.jpg`)"
                                             class="grey darken-4 rounded-lg"
                                             :width="settings.defaultImageSmallContentWidth">
                                             <template v-slot:placeholder>

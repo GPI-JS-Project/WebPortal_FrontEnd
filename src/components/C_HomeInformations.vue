@@ -23,10 +23,10 @@
                                 <router-link :to="'/informasi/detail/' + item.slugTitle" class="text-decoration-none">
                                     <v-card :elevation="hover ? 5 : 1" :class="{ 'on-hover': hover }">
                                         <v-container fluid grid-list-lg>
-                                            <v-layout row> 
+                                            <v-layout row>
                                                 <v-img :height="settings.defaultImageContentHeight"
                                                     :src="require(`../assets/${item.source}`)" :alt="item.title"
-                                                    :lazy-src="require(`../assets/${item.source}`)"
+                                                    :lazy-src="require(`../assets/default/DefaultImage.jpg`)"
                                                     class="grey darken-4 rounded-lg">
                                                     <template v-slot:placeholder>
                                                         <v-row class="fill-height ma-0" align="center" justify="center">
