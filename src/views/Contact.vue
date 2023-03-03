@@ -9,9 +9,10 @@
 </template>
   
 <script>
-// @ is an alias to /src
-import Contact from '@/components/C_Contact.vue';
-
+import { defineAsyncComponent } from 'vue';
+const Contact = defineAsyncComponent(() =>
+    import('@/components/C_Contact.vue')
+);
 export default {
     name: "DocumentDetail",
     components: {

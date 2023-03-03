@@ -30,9 +30,14 @@
 </template>
 
 <script>
-import C_Header from '@/components/C_Header.vue';
-import Footers from '@/components/C_Footer.vue';
 import { mapState } from "vuex";
+import { defineAsyncComponent } from 'vue';
+const C_Header = defineAsyncComponent(() =>
+  import('@/components/C_Header.vue')
+);
+const Footers = defineAsyncComponent(() =>
+  import('@/components/C_Footer.vue')
+);
 
 export default {
   metaInfo: {

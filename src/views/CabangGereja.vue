@@ -9,9 +9,10 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import C_CabangGereja from '@/components/C_Cabang.vue';
-
+import { defineAsyncComponent } from 'vue';
+const C_CabangGereja = defineAsyncComponent(() =>
+    import('@/components/C_Cabang.vue')
+);
 export default {
     name: "CabangGereja",
     components: {

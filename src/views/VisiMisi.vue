@@ -9,9 +9,10 @@
 </template>
   
 <script>
-// @ is an alias to /src
-import VisiMisiDetail from '@/components/C_VisiMisiDetail.vue';
-
+import { defineAsyncComponent } from 'vue';
+const VisiMisiDetail = defineAsyncComponent(() =>
+    import('@/components/C_VisiMisiDetail.vue')
+);
 export default {
     name: "NewsDetail",
     components: {

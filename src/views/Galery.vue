@@ -9,9 +9,10 @@
 </template>
   
 <script>
-// @ is an alias to /src
-import Galery from '@/components/C_AllGalery.vue';
-
+import { defineAsyncComponent } from 'vue';
+const Galery = defineAsyncComponent(() =>
+    import('@/components/C_AllGalery.vue')
+);
 export default {
     name: "NewsDetail",
     components: {

@@ -3,8 +3,10 @@
 </template>
   
 <script>
-import SearchingPages from '../components/C_SearchingPage.vue'
-
+import { defineAsyncComponent } from 'vue';
+const SearchingPages = defineAsyncComponent(() =>
+    import('@/components/C_SearchingPage.vue')
+);
 export default {
     name: "SearchingPage",
     components: {

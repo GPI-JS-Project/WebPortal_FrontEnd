@@ -52,19 +52,38 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import HomeProfile from '@/components/C_HomeProfile';
-import Carausel from '@/components/C_Carausel';
-import HomeAgenda from '@/components/C_HomeAgenda';
-import HomeInformations from '@/components/C_HomeInformations';
-import HomeDocuments from '@/components/C_HomeDocuments';
-import Poster from '@/components/C_Poster';
-import Parallax from '@/components/C_Parallax';
-import Videos from '@/components/C_HomeVideos';
-import Galery from '@/components/C_Galery';
+import { defineAsyncComponent } from 'vue';
 import { mapState } from "vuex";
+const HomeProfile = defineAsyncComponent(() =>
+  import('@/components/C_HomeProfile.vue')
+);
+const Carausel = defineAsyncComponent(() =>
+  import('@/components/C_Carausel.vue')
+);
+const HomeAgenda = defineAsyncComponent(() =>
+  import('@/components/C_HomeAgenda.vue')
+);
+const HomeInformations = defineAsyncComponent(() =>
+  import('@/components/C_HomeInformations.vue')
+);
+const HomeDocuments = defineAsyncComponent(() =>
+  import('@/components/C_HomeDocuments.vue')
+);
+const Poster = defineAsyncComponent(() =>
+  import('@/components/C_Poster.vue')
+);
+const Parallax = defineAsyncComponent(() =>
+  import('@/components/C_Parallax.vue')
+);
+const Videos = defineAsyncComponent(() =>
+  import('@/components/C_HomeVideos.vue')
+);
+const Galery = defineAsyncComponent(() =>
+  import('@/components/C_Galery.vue')
+);
+
 export default {
-  name: 'Home', 
+  name: 'Home',
   components: {
     HomeProfile,
     Carausel,
