@@ -14,111 +14,111 @@ const routes = [{
   {
     path: '/about',
     name: 'About',
-    component: () => import( /* webpackChunkName: "about" */ '../views/Agenda.vue')
+    component: () => import('../views/Agenda.vue')
   },
   {
     path: '/users',
     name: 'Users',
-    component: () => import( /* webpackChunkName: "about" */ '../views/Users.vue')
+    component: () => import('../views/Users.vue')
   },
   {
     path: '/login',
     name: 'Login',
-    component: () => import( /* webpackChunkName: "about" */ '../views/Login.vue')
+    component: () => import('../views/Login.vue')
   },
   {
     path: '/informasi/detail/:id',
     name: 'News',
-    component: () => import( /* webpackChunkName: "about" */ '../views/NewsDetail.vue')
+    component: () => import('../views/NewsDetail.vue')
   },
   {
     path: '/informasi',
     name: 'Category',
-    component: () => import( /* webpackChunkName: "about" */ '../views/Category.vue')
+    component: () => import('../views/Category.vue')
   },
   {
     path: '/informasi/kategori',
     name: 'Category',
-    component: () => import( /* webpackChunkName: "about" */ '../views/Category.vue')
+    component: () => import('../views/Category.vue')
   },
   {
     path: '/informasi/:id',
     name: 'kategori',
-    component: () => import( /* webpackChunkName: "about" */ '../views/Category.vue')
+    component: () => import('../views/Category.vue')
   },
   {
     path: '/profil',
     name: 'Profil',
-    component: () => import( /* webpackChunkName: "about" */ '../views/Profile.vue')
+    component: () => import('../views/Profile.vue')
   },
   {
     path: '/sejarah',
     name: 'Sejarah',
-    component: () => import( /* webpackChunkName: "about" */ '../views/Sejarah.vue')
+    component: () => import('../views/Sejarah.vue')
   },
   {
     path: '/visimisi',
     name: 'VisiMisi',
-    component: () => import( /* webpackChunkName: "about" */ '../views/VisiMisi.vue')
+    component: () => import('../views/VisiMisi.vue')
   },
   {
     path: '/agenda',
     name: 'Agenda',
-    component: () => import( /* webpackChunkName: "about" */ '../views/Agenda.vue')
+    component: () => import('../views/Agenda.vue')
   },
   {
     path: '/agenda/detail/:id',
     name: 'Agenda',
-    component: () => import( /* webpackChunkName: "about" */ '../views/AgendaDetail.vue')
+    component: () => import('../views/AgendaDetail.vue')
   },
   {
     path: '/informasi/detail/:id',
     name: 'News',
-    component: () => import( /* webpackChunkName: "about" */ '../views/NewsDetail.vue')
+    component: () => import('../views/NewsDetail.vue')
   },
   {
     path: '/kontak',
     name: 'Kontak',
-    component: () => import( /* webpackChunkName: "about" */ '../views/Contact.vue')
+    component: () => import('../views/Contact.vue')
   },
   {
     path: '/dokumen',
     name: 'Document',
-    component: () => import( /* webpackChunkName: "about" */ '../views/Document.vue')
+    component: () => import('../views/Document.vue')
   },
   {
     path: '/media/video',
     name: 'Video',
-    component: () => import( /* webpackChunkName: "about" */ '../views/Video.vue')
+    component: () => import('../views/Video.vue')
   },
   {
     path: '/media/foto',
     name: 'Galeri',
-    component: () => import( /* webpackChunkName: "about" */ '../views/Galery.vue')
+    component: () => import('../views/Galery.vue')
   },
   {
     path: '/foto/album/:id',
     name: 'DetailGaleri',
-    component: () => import( /* webpackChunkName: "about" */ '../views/Galery.vue')
+    component: () => import('../views/Galery.vue')
   },
   {
     path: '/pencarian',
     name: 'Pencarian',
-    component: () => import( /* webpackChunkName: "about" */ '../views/SearchPage.vue')
+    component: () => import('../views/SearchPage.vue')
   },
   {
     path: '/cabang',
     name: 'Pencarian',
-    component: () => import( /* webpackChunkName: "about" */ '../views/CabangGereja.vue')
+    component: () => import('../views/CabangGereja.vue')
   },
   {
     path: '/cabang/detail/:id',
     name: 'Pencarian',
-    component: () => import( /* webpackChunkName: "about" */ '../views/CabangGerejaDetail.vue')
+    component: () => import('../views/CabangGerejaDetail.vue')
   },
   {
     path: "/:catchAll(.*)",
-    component: () => import( /* webpackChunkName: "about" */ '../views/Notfound.vue')
+    component: () => import('../views/Notfound.vue')
   }
 ]
 

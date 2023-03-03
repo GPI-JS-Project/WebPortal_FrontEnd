@@ -10,12 +10,10 @@
             </v-row>
         </v-container>
     </v-main>
-
 </template>
   
 <script>
 import { mapState } from "vuex";
-import Breadcrumbs from '@/components/C_Breadcrumbs.vue';
 export default {
     name: "Video",
     computed: {
@@ -25,9 +23,6 @@ export default {
         return {
             data: []
         }
-    },
-    components: {
-        Breadcrumbs
     },
     methods: {
         setBreadcrumsData() {
@@ -59,9 +54,6 @@ export default {
             console.log(this.$route.params) // outputs 'yay'
 
         }
-    },
-    created() {
-        this.setBreadcrumsData();
     }
 }
 </script> 

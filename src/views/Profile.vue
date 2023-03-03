@@ -9,9 +9,10 @@
 </template>
   
 <script>
-// @ is an alias to /src
-import Profile from '@/components/C_ProfileDetail.vue';
-
+import { defineAsyncComponent } from 'vue';
+const Profile = defineAsyncComponent(() =>
+    import('@/components/C_ProfileDetail.vue')
+);
 export default {
     name: "NewsDetail",
     components: {

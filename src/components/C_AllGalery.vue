@@ -131,12 +131,16 @@
 
 <script>
 import { mapState } from "vuex";
-import Breadcrumbs from '@/components/C_Breadcrumbs.vue';
-import C_CategorySection from '@/components/C_CategorySection.vue';
-import GeneralDialog from "@/components/C_GeneralDialog.vue";
-import GaleryModal from "@/components/C_GaleryModal.vue";
-import SearchingModal from '@/components/C_SearchingModal.vue';
-
+import { defineAsyncComponent } from 'vue';
+const C_CategorySection = defineAsyncComponent(() =>
+    import('@/components/C_CategorySection.vue')
+);
+const GaleryModal = defineAsyncComponent(() =>
+    import('@/components/C_GaleryModal.vue')
+);
+const SearchingModal = defineAsyncComponent(() =>
+    import('@/components/C_SearchingModal.vue')
+);
 export default {
     data: () => ({
         dialogm1: '',
@@ -241,7 +245,6 @@ export default {
         }
     }),
     components: {
-        Breadcrumbs,
         C_CategorySection,
         GaleryModal,
         GeneralDialog,

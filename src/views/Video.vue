@@ -9,9 +9,10 @@
 </template>
   
 <script>
-// @ is an alias to /src
-import Videos from '@/components/C_AllVideos.vue';
-
+import { defineAsyncComponent } from 'vue';
+const Videos = defineAsyncComponent(() =>
+    import('@/components/C_AllVideos.vue')
+);
 export default {
     name: "Video",
     components: {

@@ -21,7 +21,7 @@
                                     <v-container fluid grid-list-lg>
                                         <v-layout row>
                                             <v-img :src="require(`../assets/poster/${item.source}`)"
-                                            :lazy-src="require(`../assets/default/DefaultImage.jpg`)"
+                                                :lazy-src="require(`../assets/default/DefaultImage.jpg`)"
                                                 class="grey darken-4 rounded-lg">
                                                 <template v-slot:placeholder>
                                                     <v-row class="fill-height ma-0" align="center" justify="center">
@@ -140,9 +140,13 @@
 </template>
 
 <script>
-import C_CategorySection from '@/components/C_CategorySection.vue';
-import SearchingModal from '@/components/C_SearchingModal.vue';
-
+import { defineAsyncComponent } from 'vue';
+const C_CategorySection = defineAsyncComponent(() =>
+    import('@/components/C_CategorySection.vue')
+);
+const SearchingModal = defineAsyncComponent(() =>
+    import('@/components/C_SearchingModal.vue')
+);
 import { mapState } from "vuex";
 export default {
     data: () => ({

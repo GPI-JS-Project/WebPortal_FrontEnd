@@ -9,9 +9,10 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import Agenda from '@/components/C_Agenda.vue';
-
+import { defineAsyncComponent } from 'vue';
+const Agenda = defineAsyncComponent(() =>
+  import('@/components/C_Agenda.vue')
+);
 export default {
   name: "AgendaDetail",
   components: {
